@@ -1,5 +1,5 @@
 EN
-This repository has been created to solve simple Python algorithm examples.
+Created for Python related project and algorithm examples in this repository.
 
 TR
-Bu depoda basit düzeyde Python algoritma örnekleri çözmek için oluşturulmuştur.  
+Bu depoda  Python ile ilgili proje ve algoritma örnekleri için oluşturuldu.  
