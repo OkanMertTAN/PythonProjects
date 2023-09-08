@@ -1,0 +1,9 @@
+------------------------------------------
+  Başlık : Yazılım
+  Atanan Kişi : okanmerttan
+  Öncelikli Atama : DÜŞÜK
+  İçerik : 
+   Bu bir denemedir.
+  Son Tarih : 5/6/2023
+  Durum : Devam Ediyor
+------------------------------------------

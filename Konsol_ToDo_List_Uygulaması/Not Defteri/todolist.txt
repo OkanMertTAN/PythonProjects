@@ -1,0 +1,26 @@
+Yapılacaklar Listesi Ekleme
+Görevleri işaretleme, silme ve düzenleme
+Öncelik atama (yüksek,orta,düşük)
+Son tarih
+Atanan Kişi
+
+
+Dosya içeriği;
+
+------------------------------------------
+1 Başlık :                                  satır 2 col 11
+2 Atanan Kişi :                             satır 3 col 15
+3 Öncelikli Atama :                         satır 4 col 20
+4 İçerik :                                  satır 5   120 karakter sınırı 
+q                                        q  satır 6 col 4
+5 Son tarih :                               satır 7 col 14
+6 Durum : Bitti/Devam ediyor                satır 8 col 10
+------------------------------------------
+
+
+
+Fonksiyonalar ;
+-main metot
+-dosya oluşturma (dosya adı Başlık adı)
+-dosya silme
+-tamamlama işaretleme

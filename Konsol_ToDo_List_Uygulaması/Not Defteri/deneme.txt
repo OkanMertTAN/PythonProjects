@@ -1,0 +1,66 @@
+def toDoListDüzenleme():
+    try:
+        print("Var olan todolistleriniz : ")
+        for i in todolists:
+            print("-" + i)
+
+        todoListArama = input("Düzeltmek istediğiniz todolisti yazınız. ")
+
+    
+        todoListArama = "{}.txt".format(todoListArama)
+
+        with open(todoListArama,"r",encoding="utf-8") as dosya:
+            satirlar = dosya.readline()
+    
+    
+        sütunSilme = 45
+        #Satır ve sütün indexleri sayesinde txt dosyasında değşiklik yapılacak. 
+        satirIndeks_Başlik = 1
+        sütunIndeks_Başlik = 10
+        satirIndeks_AtananKisi = 2
+        sütunIndeks_AtananKisi = 14
+        satirIndeks_Öncelik = 3
+        sütunIndeks_Öncelik = 19
+        satirIndeks_Icerik = 5
+        sütunIndeks_Icerik = 3
+
+    
+        todoListDegistirmeBaslik = input("Değistimek istediğiniz başlık : ")
+        satirlar[satirIndeks_Başlik] = satirlar[satirIndeks_Başlik][:sütunIndeks_Başlik] + satirlar[satirIndeks_Başlik][sütunSilme + 1:] 
+        #Bu satır değişitirilme istenen satır ve sütündaki bilgileri siler
+        satirlar[satirIndeks_Başlik] = satirlar[satirIndeks_Başlik][:sütunIndeks_Başlik] + todoListDegistirmeBaslik + satirlar[satirIndeks_Başlik][sütunIndeks_Başlik + 1:]
+        #Yeni bilgiyi ekler                                                                yeni bilgi
+
+        todoListDegistirmeAtananKisi = input("Değistimek istediğiniz Atanan Kişi : ")
+        satirlar[satirIndeks_AtananKisi] = satirlar[satirIndeks_AtananKisi][:sütunIndeks_AtananKisi] + satirlar[satirIndeks_AtananKisi][sütunSilme + 1:] 
+        #Bu satır değişitirilme istenen satır ve sütündaki bilgileri siler
+        satirlar[satirIndeks_AtananKisi] = satirlar[satirIndeks_AtananKisi][:sütunIndeks_AtananKisi] + todoListDegistirmeAtananKisi + satirlar[satirIndeks_AtananKisi][sütunIndeks_AtananKisi + 1:]
+        #Yeni bilgiyi ekler                                                                            yeni bilgi
+    
+        satirlar[satirIndeks_Öncelik] = satirlar[satirIndeks_Öncelik][:sütunIndeks_Öncelik] + satirlar[satirIndeks_Öncelik][sütunSilme + 1:]
+        item = input("Öncelik Değirtirme için Seçiniz (Düşük = 1 , Orta = 2 , Yüksek = 3) : ")
+        todoListDegistirmeÖncelik = ""
+        if item == "1":
+            todoListDegistirmeÖncelik = öncelikAtma[0]
+        elif item == "2":
+            todoListDegistirmeÖncelik = öncelikAtma[1]
+        elif item == "3":
+            todoListDegistirmeÖncelik = öncelikAtma[2]
+        else:
+            todoListDegistirmeÖncelik = "NONE"
+            print("Geçerli bir değer giriniz. Daha sonra düzeltme seçeneği ile değiştirilebilir. ")
+    
+        satirlar[satirIndeks_Öncelik] = satirlar[satirIndeks_Öncelik][:satirIndeks_Öncelik] + todoListDegistirmeÖncelik + satirlar[satirIndeks_Öncelik][sütunIndeks_Öncelik + 1:]
+            #Yeni bilgiyi ekler                                                                yeni bilgi
+    
+        todoListDegistirmeIcerik = input("Değistimek istediğiniz içerik : ")
+        satirlar[satirIndeks_Icerik] = satirlar[satirIndeks_Icerik][:sütunIndeks_Icerik] + satirlar[satirIndeks_Icerik][sütunSilme + 1:] 
+        #Bu satır değişitirilme istenen satır ve sütündaki bilgileri siler
+        satirlar[satirIndeks_Icerik] = satirlar[satirIndeks_Icerik][:sütunIndeks_Icerik] + todoListDegistirmeIcerik + satirlar[satirIndeks_Icerik][sütunIndeks_Icerik + 1:]
+        #Yeni bilgiyi ekler                                                                yeni bilgi
+
+        dosya.close()
+        os.system("cls")
+
+    except FileNotFoundError:
+        print("Lütfen geçerli bir veri giriniz.")
